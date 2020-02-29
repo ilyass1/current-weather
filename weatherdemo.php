@@ -120,7 +120,7 @@
   include('weatherdata.php');
   include('geo.php');
   if(isset($_GET["city"]) && !empty($_GET["city"]) ){
-  $weatherApiCityName= "http://api.openweathermap.org/data/2.5/weather?q=".$_GET["city"]."&lang=fr&units=metric&APPID=1ab82ea1f4a73e07cd87e267c0cb7993";
+  $weatherApiCityName= "http://api.openweathermap.org/data/2.5/weather?q=".htmlspecialchars(stripslashes($_GET["city"]))."&lang=fr&units=metric&APPID=1ab82ea1f4a73e07cd87e267c0cb7993";
   }
   else{
        //header('location: weathererror.php');
